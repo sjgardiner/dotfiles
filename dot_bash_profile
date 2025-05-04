@@ -1,0 +1,14 @@
+# Set up homebrew environment
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Use homebrew llvm with some necessary headers provided by xcode
+export PATH="/opt/homebrew/opt/llvm/bin:${PATH}"
+export LDFLAGS="${LDFLAGS} -L/opt/homebrew/opt/llvm/lib"
+export CPPFLAGS="${CPPFLAGS} --sysroot=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/opt/homebrew/opt/llvm/include"
+
+# Set up bash "vi mode"
+set -o vi
+
+# Make 'vi' and 'vim' point to neovim
+alias vi='nvim'
+alias vim='nvim'
