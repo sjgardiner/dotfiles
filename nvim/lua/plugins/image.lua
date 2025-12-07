@@ -10,7 +10,9 @@ return {
     config = function()
       require("image").setup({
         -- Use the ueberzug backend
-        backend = "ueberzug",
+        --backend = "ueberzug",
+        -- Use the kitty backend
+        backend = "kitty",
         -- do whatever you want with image.nvim's integrations
         integrations = {
           markdown = {

@@ -35,14 +35,14 @@ return {
             automatic_installation = true,
             automatic_setup = true,
             handlers = {},
-            ensure_installed = { 'codelldb' },
+            ensure_installed = { 'cpptools' },
           })
 
           local dap = require("dap")
           dap.configurations.cpp = {
             {
               name = "Launch file",
-              type = "codelldb",
+              type = "cppdbg",
               request = "launch",
               program = function()
                 return vim.fn.input('Path to executable: ',
