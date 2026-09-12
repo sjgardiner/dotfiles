@@ -6,7 +6,7 @@ return {
     event = "VeryLazy",
     lazy = vim.fn.argc(-1) == 0,
     config = function()
-      require('nvim-treesitter.configs').setup({
+      require('nvim-treesitter.config').setup({
         ensure_installed = {
           'vimdoc', 'c', 'cpp', 'lua', 'python', 'diff',
           'regex', 'yaml', 'json', 'vim', 'bibtex', 'cmake',
