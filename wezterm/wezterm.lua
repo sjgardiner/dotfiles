@@ -49,12 +49,23 @@ config.keys = {
 
 -- Use ALT + number to activate the corresponding tab
 for i = 1, 8 do
-table.insert(config.keys, {
-key=tostring(i),
-mods="ALT",
-action=wezterm.action{ActivateTab=i-1},
-})
+  table.insert(mykeys, {
+    key=tostring(i),
+    mods="ALT",
+    action=wezterm.action{ActivateTab=i-1},
+  })
 end
+
+-- Use SUPER + SHIFT + ! to move the current tab to a new window
+table.insert(mykeys, {
+  key = '!',
+  mods = 'SUPER|SHIFT',
+  action = wezterm.action_callback(function(win, pane)
+    local tab, window = pane:move_to_new_window()
+  end),
+})
+
+config.keys = mykeys
 
 -- Set the color scheme
 --config.color_scheme = "Catppuccin Mocha" -- or Macchiato, Frappe, Latte

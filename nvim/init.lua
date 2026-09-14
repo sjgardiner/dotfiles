@@ -19,7 +19,13 @@ vim.cmd( [[autocmd FileType make set noexpandtab]] )
 vim.opt.inccommand = "split"
 
 -- Reserve space for the sign column by default
---vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = 'yes'
+
+-- Strip trailing whitespace on save
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*", -- For all file types
+  command = ":%s/\\s\\+$//e",
+})
 
 require("config.lazy")
 
