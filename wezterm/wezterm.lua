@@ -23,7 +23,7 @@ config.window_decorations = "RESIZE"
 -- Define some custom key mappings to handle copy/paste in a reasonable
 -- way. This configuration is based on
 -- https://github.com/wezterm/wezterm/discussions/2426#discussioncomment-4197449
-config.keys = {
+mykeys = {
   {
     key = 'c',
     mods = 'CTRL',
